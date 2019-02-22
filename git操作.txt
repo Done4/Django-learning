@@ -46,16 +46,40 @@ git remote rm origin 远程仓库地址
 
 地址：  git@github.com:Done4/Django-learning.git
 
+master是主分支
+
 推送本地库内容到远程库
 git push origin master  注意：需要先把远程库内容拉到本地
 
 拉取远程库内容到本地
 git pull origin master --allow-unrelated-histories
 
-------------开发流程---------
+---------------------------开发流程-------------------------
 先有远程库 
 git clone 远程库地址  克隆到本地
 
+创建忽略文件 ，里面写不上传的文件名
+touch .gitignore 
 
+创建分支
+git branch 分支名
+切换分支
+git checkout 分支名
+创建与切换同时进行
+git checkout -b 分支名
+查看当前分支 
+git branch
 
+合并分支到master,切换到master
+git merge 合并的分支名
+
+传到远程分支
+git push --set-upstream origin 分支名
+
+打标签
+git tag 标签名
+查看所有标签 
+git tag
+跟分支语法差不多一样
+......
 
