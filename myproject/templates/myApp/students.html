@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+    <hl>学生信息列表</hl>
+    <ul>
+        <!--用for循环读信息 ，传 students 即可-->
+        {%for stu in students%}
+        {%if forloop.counter|divisibleby:2%}
+        <li style="color:red">
+            {{forloop.counter}}--{{stu.sname}}--{{stu.scontend}}</a>
+        </li>
+
+        {%else%}
+         <li style="color:yellow">
+            <a href="#">{{forloop.counter}}--{{stu.sname}}--{{stu.scontend}}</a>
+        </li>
+        {%endif%}
+
+        {%empty%}
+            <li>目前没有学生</li>
+
+        {%endfor%}
+    </ul>
+    <!--过滤器 var|upper -->
+    <h1>{{list|join:','}}</h1>
+    <h1>{{test|default:'没传则默认写这个'}}</h1>
+    <h1>num={{num}}</h1>
+    <h1>num+10={{num|add:10}}</h1>
+    <h1>num-5={{num|add:-5}}</h1>
+    <!--num/1*5-->
+    <h1>num*5={%widthratio num 1 5%}</h1>
+    <!--num/5*1-->
+    <h1>num/5={%widthratio num 5 1%}</h1>
+
+</body>
+</html>
