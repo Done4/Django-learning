@@ -1,0 +1,61 @@
+git config --global user.name "GitHub name"
+git config --global user.email "GitHub email"
+
+
+cd /D/repositories  仓库地址
+创建仓库
+git init
+交给仓库管理 ，本地
+git add filename
+git commit -m "First submmission"
+
+git status 查看仓库状态
+
+git diff 查看修改内容
+git log  查看提交日志
+git log --pretty=oneline 只显示提交版本编号和备注
+
+git reset --hard HEAD^   回退到上一版本
+git reset --hard HEAD^^  回退到上上版本
+git reset --hard HEAD~100 回退到上100个版本
+git reset --hard 具体版本号  不用全写，写前几个
+ 
+git reflog 记录每次命令
+
+git checkout -- fileName 撤销操作，没有提交回退到版本库一样，提交了回退到暂存区一样
+
+-----------------------创建远程仓库-----------------------------------------
+ssh-keygen -t rsa -C "github邮箱"
+
+ssh路径
+Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):
+
+cd /c/Users/Administrator/.ssh
+id_rsa 私钥 id_rsa.pub 公钥
+cat id_rsa.pub  查看
+
+在GitHub添加公钥 
+ssh -T git@github.com  测试
+
+在GitHub创建一个仓库 （略）
+
+关联远程仓库地址
+git remote add origin 远程仓库地址
+删除关联
+git remote rm origin 远程仓库地址
+
+地址：  git@github.com:Done4/Django-learning.git
+
+推送本地库内容到远程库
+git push origin master  注意：需要先把远程库内容拉到本地
+
+拉取远程库内容到本地
+git pull origin master --allow-unrelated-histories
+
+------------开发流程---------
+先有远程库 
+git clone 远程库地址  克隆到本地
+
+
+
+
